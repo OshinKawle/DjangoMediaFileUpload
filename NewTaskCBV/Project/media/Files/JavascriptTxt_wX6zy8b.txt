@@ -1,0 +1,1255 @@
+Day1:
+
+debugger;
+var x=1;
+abc();
+xyz();
+debugger;
+console.log(x);
+
+function abc() {
+    debugger;
+    var x=10;
+console.log(x);
+}
+function xyz(){
+    debugger;
+    var x=100;
+console.log(x);
+// }/*  */
+
+Day2:
+
+How to define Variables with var, let and const?
+1)var is not hoisted where as let/const are hoisted
+2)var can defined duplicate/same varibles where as let/const cant define duplicate vari
+3)var having global level scope aceess where as let/const having block/local level scope 
+
+
+Hoisting- without intiasing variables or even before putting values into the variables
+we can access them
+
+------------------------------------------------------------------------------------------------------
+
+var  a=50;
+var name='amol vidhate';
+var isActive=true;
+console.log(a);
+console.log(name);
+ let num=46;
+ const mblno=23653264372
+ console.log(num);
+ console.log(mblno);
+ 
+ 
+1st difference
+
+
+abc();
+console.log(z);
+
+console.log(a);
+ console.log(b);
+ var z=56;
+ let a=100;
+ const b=50;
+
+function abc() {
+   console.log("Hey I can access before the initialization");
+   
+}
+
+
+ReferenceError: Cannot access 'b' before initialization
+
+console.log(b); 
+//console.log(xyz());
+
+let b=100;
+function xyz() {
+   console.log("Hey I can access before the initialization");
+   
+}
+ 
+------------------------------------------------------------------------------------------------------
+
+2nd difference
+
+
+var a=10;
+ var a=150;
+console.log(a);
+
+
+
+//SyntaxError: Identifier 'b' has already been declared
+let b=20;
+let b=100;
+console.log(b);
+
+------------------------------------------------------------------------------------------------------
+
+3rd difference
+
+What is Global Scope and Block Scope in js?
+Global Scope- access within entire function/anywhere
+Block Scope- access only within perticular block scope
+
+{
+  debugger;
+   var a=10;
+   let b=35;
+   const c= 50;
+   console.log(a);
+console.log(b);
+console.log(c);
+
+}
+console.log(a);
+
+console.log(b);
+console.log(c);
+
+
+console.log(a);
+ReferenceError: b is not defined
+console.log(b);
+console.log(c);
+---------------------------------------------------
+difference between let and const
+
+let name="amol vidhate";
+let lastname="kalanke";
+lastname=name;
+console.log(lastname);
+
+const name="amol vidhate";
+const lastname="kalanke";
+lastname=name;
+console.log(lastname);
+
+
+------------------------------------------------------------------------------------------------------
+
+What is Scope Chain and Lexical Environment?
+
+scope-chain = compiler will find the variables in chaining manner in their parent execution context
+Lexical-Environment= combination of Local memory and reference to the parent execution context/lexical environemt
+
+ debugger;
+function a() {
+debugger;
+
+   var b=20;
+   
+   c();
+  function c() {
+     debugger;
+     console.log(b);
+     
+   }
+         }
+a();
+debugger;
+console.log(b);
+
+
+
+var a;
+console.log(a);
+
+let b=null;
+console.log(b);
+
+NaN=Not a Number
+
+bug
+var a='10';
+var b='20';
+console.log(a-b);
+
+NaN Example-
+var a='abc';
+var b='cdf';
+ console.log(a-b);
+
+
+var mblno=4378687648
+if(!isNaN(mblno))
+{
+console.log("valid mblo");
+
+}
+else{
+   console.log("not a valid number");
+   
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+function changeValue() {
+   document.getElementById("title").innerHTML="JavaScript Basic Introduction (Change)"
+   document.
+   getElementById("title").style.backgroundColor='green'
+}
+
+
+Day3:
+
+What is Function Defination/Declaration/Statement?
+
+need of function
+var a=10;
+var b=20;
+var sum=a+b;
+console.log(sum);
+
+var g=30;
+var h=20;
+var minus=g-h;
+console.log(minus);
+
+DRY=Dont repeat Yourself
+
+var a=15;
+var b=26;
+var sum=a+b;
+console.log(sum);
+
+function sum() {
+    var a=67;
+    var b=26;
+    var sum=a+b;
+ console.log(sum);
+}
+// //calling a function
+ sum();
+
+
+function parameter and arguments
+function sum(num1,num2) {
+   var sum=num1+num2;
+console.log(sum);
+}
+
+ //sum();
+sum(12,45);
+sum(58,35);
+sum(10,34);
+
+
+function statement /declaration
+
+function fullname( name){
+   console.log("Hello "+name);
+
+}
+fullname('AMol Vidhate');
+
+
+
+
+What is Function Expression?
+
+create a function  and put into the variables
+function sum(num1,num2) {
+    return total= num1+num2;
+
+}
+
+var funExp=sum(50,45);
+  console.log('The Sum of two numbers is:'+funExp);
+
+What is Annonymous Function Expression
+
+function name(params) {
+    return 'Hello '+params;
+}
+var output=name('JavaScript')
+console.log(output);
+
+
+
+var name=function(param) {
+return 'Hello '+param;
+}
+console.log(name('AMolk Vidhatew'))
+
+var result=name('JavaScrpt session');
+console.log(result);
+
+
+ debugger;
+var funExp=function (num1,num2) {
+   debugger;
+    return total= num1+num2;
+
+}
+     //  console.log(funExp(35,57)); //give function only
+//console.log(funExp(10,20));
+debugger;
+var sum = funExp(10,20);
+console.log(sum);
+
+We can pass one function  as an argument into another function
+
+function fullname(params) {
+    console.log("Hello "+params());
+  // params();   
+}
+
+fullname(function(){
+   return "AMol vidhate"
+});
+
+
+We can return a function from another function
+
+function fullname(params) {
+   console.log(params);
+return function () {
+      console.log("You are great!");
+
+   }
+    //    var inner= function(){
+   // console.log("You are great!");
+
+   //     }
+
+   //     return inner()
+}
+     var  inner=fullname('AMol Vidhate')
+  inner();
+
+
+
+First Class Function/citizens  in JS?
+ability of function to be act as a value, paasing of function  as an argument into the another function
+and return the one function from the another function
+
+function sum(num1,num2) {
+    return total= num1+num2;
+
+}
+
+ var funExp=sum(50,45);
+ console.log('The Sum of two numbers is:'+funExp);
+
+
+
+What is Arrow Function?
+var sum=(num1,num2)=>{
+return total=num1+num2;
+}
+console.log(sum(10,30));
+
+var sum=(num1,num2)=> total=num1+num2;
+  console.log(sum(10,30));
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+function changeValue() {
+   document.getElementById("title").innerHTML = "JavaScript Basic Introduction (Change)"
+   document.
+      getElementById("title").style.backgroundColor = 'green'
+}
+
+
+Day4:
+
+What is Closure?
+A Function is bundled/together with the lexical environment of parent function(function along with their lexical environment)
+
+//Basic Example 1
+ debugger;
+function x() {
+  debugger;
+    var a=34;
+    function y() {
+      debugger;
+        console.log(a);
+        
+    }
+    y();
+}
+x();
+
+idel Example 2
+ debugger;
+function x() {
+   debugger;
+    var a=34;
+   return  function y() {
+        debugger;
+        console.log("this is inner fun:"+a);
+        
+    }
+ //return y;
+}
+debugger;
+  var innerFun=x(); 
+console.log( innerFun());
+
+  
+Example 3  show in debug
+
+ debugger;
+function z() {
+  // debugger;
+    var a=15;
+   return  function y() {
+     //  debugger;
+        var b =45;
+
+       return function x() {
+         //  debugger
+          console.log(a,b);
+            
+        }
+       
+    }
+    
+    
+}
+  var innerFunctions= z();
+ console.log(innerFunctions()());
+  
+
+Uses of Clouser
+1)Currying, asynchronous pragramming(for maintaing states), setTimeOuts
+
+
+Higher Order Function and Callback Function?
+
+function fullname(){
+
+}
+fullname(function abc(){
+
+});
+
+var radius=[3,6,8,5];
+
+var area= function(radius){
+   return (Math.PI * radius * radius);
+}
+var diameter = function (radius) {
+   return (radius * 2)
+}
+
+var calculate=function (array, logic){
+   var result=[];
+   for (let i = 0; i < array.length; i++) {
+      result.push(logic(array[i]))
+      
+   }
+   return result;
+}
+var output=calculate(radius, diameter);
+console.log(output);
+
+
+
+var radius=[3,6,2,8,4];
+
+function diameter(radius) {
+   return radius*2;
+   
+}
+function area(radius) {
+   return  (3.14 * radius*radius)
+}
+
+var calculate= function(array,logic){
+   var output=[];
+   for(var i=0;i<array.length;i++){
+output.push(logic(array[i]));
+   }
+
+   return output;
+}
+var result=calculate(radius,area)
+console.log(result);
+
+------------------------------------------------------------------------------------------------------
+
+function changeValue() {
+   document.getElementById("title").innerHTML="JavaScript Basic Introduction (Change)"
+   document.
+   getElementById("title").style.backgroundColor='green'
+}
+
+
+Day5:
+
+var g=100;
+function z() {
+let  a;
+const  f=50;
+console.log(f);
+
+  function y() {
+      var b=50;
+     let a=70;
+      function x() {
+          console.log(a,b,g);
+          
+      }
+      x();
+     
+      
+  }  
+  y();
+  console.log(a);
+}
+z();
+
+
+
+
+
+
+
+
+
+String Literals in ES6
+
+"use strict"
+
+let fname="amoil";
+let lname="vidhate";
+let gender="Male"
+
+console.log("my fullname is:"+fname+" "+lname+"my gender is : "+gender);
+
+
+
+
+for (let i = 1; i <=10; i++) {
+    
+   var tableOf=12;
+ // console.log(tableOf+" * "+i +"="+tableOf * i);
+  
+ // console.log(` ${tableOf} * ${i} =    ${tableOf * i}`);
+  
+   
+}
+
+------------------------------------------------------------------------------------------------------
+
+Arrays in JavaScript
+
+1)way- with the help of new keyword
+var names=new Array('amol','suyog','akash',5,true)
+         console.log(names);
+ 
+with the help of literals
+var names=['amol','suyog','akash','suyash','nilesh']
+console.log(names);
+
+//Access single Element
+ console.log(names[3]);
+ console.log(names[4]);
+ 
+
+//how to check length of an array
+console.log(names.length);
+console.log(names[names.length-1]);
+
+
+var names=['amol','suyog','akash','suyash','nilesh']
+
+
+
+Use for loop to navigation
+for (let i=0; i<names.length;i++) {
+   const name = names[i];
+   console.log(name);
+   }
+
+   //After ES6 We have for in loop and for of loop
+
+
+var names=['amol','suyog','akash','suyash','nilesh']
+
+
+   //for in loop
+for (let index in names) {
+   // console.log(index);
+    console.log(names[index]);
+    
+    
+}
+
+
+  // for of loop
+
+for (const element of names) {
+    console.log(element);
+    
+}
+
+
+
+    for each loop of an array
+   var names=['abc','xyz','pqr','mno'];
+  debugger;
+    names.forEach(function(element,index,arr){
+        debugger;
+console.log(index+":"+element+"="+arr);
+
+    });
+
+    var res=  names.forEach((ele,index,arr)=>{
+        console.log(index+":"+ele+"="+arr);
+   
+      })
+      console.log(res);
+      
+
+------------------------------------------------------------------------------------------------------
+
+Methods in Array
+var names=['abc','xyz','pqr','mno','pqr','xyz','pqr'];
+1) indexOf()
+var index= names.indexOf('pqr',3);
+console.log(index);
+console.log(names[index]);
+
+
+
+2) lastIndexOf()
+var index=names.lastIndexOf('pqr');
+console.log(index);
+console.log(names[index]);
+
+var names=['abc','xyz','pqr','mno','pqr','xyz','pqr'];
+
+
+3)includes()
+
+var retu=names.includes('xyzfkjf');
+console.log(retu);
+
+
+4)find()
+ 
+var names=['abc','xyz','pqr','mno'];
+
+function getData(element) {
+    return (element==='mno');
+}
+
+var singleRecord=names.find(getData);
+console.log(singleRecord);
+
+var singleRecord=names.find((element,index)=>{
+    console.log(index);
+    
+    return ( element==='pqr')
+});
+console.log(singleRecord);
+
+
+5) filter()
+ var prices=[234,555,674,789,221,444];
+   
+ var outp=prices.filter((element)=>{
+     return (element<500)
+ })
+
+ console.log(outp);
+ 
+
+6) splice()
+
+var names=['abc','xyz','pqr','mno'];
+var deletedName=names.splice(1,1);
+console.log(deletedName);
+console.log(names);
+
+  var newEle=names.splice(1,0,'XYZ')
+  console.log(names);
+  
+var newEle=names.splice(1,1,'XYZ')
+  console.log(names);
+  
+
+
+var deletedName=names.splice(1,3);
+console.log(deletedName);
+
+
+map()
+var numbers=[2,3,5,7,8,9];
+
+var newNum=numbers.map((number)=>{
+
+    return (number+5)
+})
+
+console.log(newNum);
+
+double the values of element from array
+//with arrow function
+var output=numbers.map((x)=> x*2);
+console.log(output);
+
+reduce()
+var numbers=[2,3,5,7,8,9];
+
+debugger;
+var totalSum=numbers.reduce((accu,element)=>{
+//console.log(accu);
+//console.log(element);
+debugger;
+
+    return (accu=accu+element);
+})
+
+console.log(totalSum);
+
+debugger;
+var sum=numbers.reduce((accu,element)=>{
+    debugger;
+    return (accu+=element)
+},100)   
+console.log(sum);
+
+Two-diamential array convert into One dimanewtial array
+
+var names=['amol',['abc','xyz'],'akshay']
+//console.log(names);
+
+var oneDia=names.reduce((accu, element)=>{
+    return (accu.concat(element))
+},[])
+console.log(oneDia);
+
+difference between forEach() and map()
+1) forEach() return the undefined where as map() return the new array()
+2) forEach() cannot perform chaining operation where as map() perform chaining operations.
+
+var users=[
+    {id:1,name:'akshay xyz',age:34,gender:'male'},
+    {id:2,name:'rasika xyz',age:14,gender:'Female'},
+    {id:3,name:'shubham xyz',age:18,gender:'male'},
+    {id:4,name:'mnoj xyz',age:45,gender:'male'},
+    {id:5,name:'komal xyz',age:34,gender:'Female'},
+
+ ]
+
+ to find users having age more than 20
+
+ var result=users.map((user)=>{ 
+     return user;
+ }).filter((user)=>{
+return user.age>20;
+ })
+ console.log(result);
+ 
+
+to find users name having age more than 20
+
+var userName=users.filter((user)=>{
+    return user.age> 20;
+}).map((user)=>{
+   // console.log(user.id);
+    return user.name;
+})
+
+
+console.log(userName);
+
+userName.forEach((name)=>{
+    console.log(name);
+    
+})
+
+
+to find users name having age more than 20
+  var usersName=users.filter((user)=>user.age>20).map((user)=>user.name)
+  console.log(usersName);
+  usersName.forEach((name,index)=>{
+      console.log(index+1+")"+name);
+      
+  })
+  
+
+------------------------------------------------------------------------------------------------------
+
+function changeValue() {
+   document.getElementById("title").innerHTML="JavaScript Basic Introduction (Change)"
+   document.
+   getElementById("title").style.backgroundColor='green'
+}
+
+Day6:
+
+What is an Object?
+Object is used to store data in key -value pair
+Object caan store function also
+
+
+var employee={
+    name:'Amol vidhate',
+    age:46,
+    username:'abc',
+    password:'abc',
+    getdata: function(){
+console.log("Inside function");
+
+    },
+    afterES6(){
+      
+console.log(`User Name:${employee.name} , User Password:${employee.password}` );
+ 
+    }
+  
+}
+
+//access peoperties of an object
+console.log(employee.password);
+employee.getdata();
+console.log(employee.getdata);
+
+employee.getdata();
+ employee.afterES6();
+------------------------------------------------------------------------------------------------------
+
+nested Object
+
+var employee={
+   id:1,
+   name:'abc xyz',
+   gender:'male',
+   address:{
+      city:'pune',
+      country:'india',
+      pincode:43674367,
+      padd:{
+         homeno:43764,
+         streetname:'karvenagar'
+      }
+   }
+}
+console.log(`Employee name: ${employee.name} and Employee city :${employee.address.city}`);
+
+
+
+
+onjects in Array
+
+var employeeData=[
+   {id:1,name:'Amol Vidhate',mblNo:26235742,city:'nagar'},
+   {id:2,name:'Abc Vidhate',mblNo:26235742,city:'nagar'},
+   {id:3,name:'xyz Vidhate',mblNo:12345,city:'nagar'},
+   {id:4,name:'pqr Vidhate',mblNo:26235742,city:'nagar'},
+   
+
+]
+//console.log(employeeData[1]);
+//single record
+
+var emp=employeeData.find((employee)=>{
+return employee.mblNo==12345;
+})
+console.log(emp.name);
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+this keyword/object (used to access current scope object properties)
+
+console.log(this);
+
+
+var employee={
+    name:'Amol vidhate',
+    age:46,
+    username:'abc',
+    password:'abc',
+    getdata: function(){
+console.log(`User Name:${this.name} , User Password:${this.password}` );
+
+    }
+}
+employee.getdata();
+
+------------------------------------------------------------------------------------------------------
+
+Change Dynamic values of Object by Property binding
+var newName="abc xyz";
+var city="newcity";
+var employee={
+   id:1,
+   name:newName,
+   [city]:"pune"
+}
+console.log(employee.newcity);
+
+
+ 
+------------------------------------------------------------------------------------------------------
+
+Destructuring of Obejct and Array
+
+Destructuring of an Object
+
+var employee={
+        name:'Amol vidhate',
+        age:46,
+        username:'abc',
+        password:'abc',
+        getdata: function(){
+    console.log(`User Name:${employee.name} , User Password:${employee.password}` );
+    
+        },
+    }
+ //console.log(employee.age, employee.name,employee.username);
+//destructured object
+let {name,age,username,password}=employee
+  console.log(username);
+  console.log(age);
+ console.log(name);
+ console.log(getdata());
+ 
+ console.log(mblno);
+ 
+ 
+ 
+
+
+Destructuring of an Array
+
+var employeeList=[
+   {id:1,name:'fdghdf'},
+   {id:2,name:'fdghdf'},
+   {id:3,name:'fdghdf'},
+   {id:4,name:'fdghdf'},
+   {id:5,name:'fdghdf'}
+
+]
+
+let [one,two,three,four,five]=employeeList;
+console.log(two);
+
+
+------------------------------------------------------------------------------------------------------
+
+Spread Operator
+
+var frinds=['suresh','akshay','sanu','jayesh','sachin','radhika','sumesh'];
+var myFavFrineds=['trupti','pankaj','peter','sudhir'];
+//var totalFrindList=['suresh','akshay','sanu','jayesh','sachin','radhika','sumesh','trupti','pankaj','peter','sudhir']
+
+var totalFrindList=[...frinds, ...myFavFrineds];
+console.log(totalFrindList);
+
+var address={
+paddr:'nagar',
+taddr:'pune'
+}
+
+
+var user={
+    name:'amol vidhate',
+    age:25,
+    ...address
+}
+console.log(user);
+
+What are the Object Methods?
+
+var person={name:'AMol Vidhate',gender:'Male', mblno:903243543}
+
+1)Object.keys and Objects.values and Object.entries
+
+console.log(Object.keys(person));
+
+for (const key of Object.keys(person)) {
+   console.log(key);
+  var value= person[key]
+   console.log(value);
+   
+}
+
+console.log(Object.values(person));
+console.log(Object.entries(person));
+
+
+
+------------------------------------------------------------------------------------------------------
+
+function changeValue() {
+   document.getElementById("title").innerHTML="JavaScript Basic Introduction (Change)"
+   document.
+   getElementById("title").style.backgroundColor='green'
+}
+
+
+Day7:
+
+// What is the Window ?
+// window is the main container or we can say global object 
+// and any opration related to browser 
+// All the members of of Window (Properties, methods etc) can be direct access without any reference
+// 'this' keyword represent the global obejct (Window object) 
+// Window methods-setTimeout() , setInterval() etc
+// window Objects- Document, Screen, Location
+
+// alert("hi");
+// prompt("promt");
+// confirm('are you sure to exit');
+
+// setTimeout(function(){
+//   console.log("Now i am rendering after 2 sec");
+  
+// },2000)
+
+// var count=0;
+// setInterval(()=>{
+//   count++;
+//   console.log("I am rendering after every sec"+count);
+  
+// },1000);
+// ------------------------------------------------------------------------------------------------------
+
+//What is  Document/DOM(Document Object Model)?
+// Document is the child object/part of Window object
+// To Access document Properties (methods, elements etc) need reference
+//Docuement is the just child Object of Window and used to deal with docuement and HTML Element
+// ------------------------------------------------------------------------------------------------------
+
+//What is BOM (Browser Object Model)
+// BOM is the child object/part of Window object
+//BOM contains- Nevigation ,History , Location etc
+// BOM contais- alert/prompt/confirm
+// alert("Hey I am iN BOM");
+// prompt("hey I am Prompt");
+// confirm("Hey i am Confirm window");
+
+// ------------------------------------------------------------------------------------------------------
+
+//Document (DOM) methods
+//1)document.body.childNodes  - give each and every node of document
+//2)document.body.children  - give all elements with indexwise
+//3)document.body.hasChildNodes() -give boolean value
+// ------------------------------------------------------------------------------------------------------
+
+//How to find childes element 
+//1)document.body.firstElementChild - give first element of respective element
+//2)document.body.firstElementChild.firstElementChild.style.color='red'
+
+//3) var ele=document.body.firstElementChild.firstElementChild
+// ele.style.color='red'
+
+//4) var ele=document.body.firstElementChild.firstElementChild
+// ele.style.color='red'
+
+//How to find sibling of element
+//5) var sibling=document.body.firstElementChild.nextElementSibling
+// sibling.firstElementChild.style.color='green'
+// ------------------------------------------------------------------------------------------------------
+
+
+//How to Search HTML Element and Reference (Play with DOM)
+//function changeValue() {
+   //By Using ID
+   // document.getElementById("title").innerHTML="JavaScript Basic Introduction (Change)";
+  
+  //By Using Class
+   //   const classElements= document.getElementsByClassName('one');
+   //   console.log(classesElements);
+
+//    By Using Tag 
+//   const tagElements=document.getElementsByTagName('li');
+//   console.log(tagElements);
+
+   // By Using querySelector
+   // document.querySelector('#title').innerHTML="I am Changed Again";
+  
+  //Replace HTML Element with another Element
+//  const parentDiv= document.querySelector('#parentDiv');
+// console.log(parentDiv);
+// const innerDiv=parentDiv.firstElementChild;
+// console.log(innerDiv);
+
+//     var h1=  document.createElement('h1');
+//     console.log(h1);
+//          h1.innerHTML="Hey now I am replace by H1";
+//        parentDiv.replaceChild(h1,innerDiv);
+
+//}
+
+// ------------------------------------------------------------------------------------------------------
+/*document.querySelector('#title').innerHTML='i am changed again'
+var list=document.querySelectorAll('.one')
+list.forEach((ele)=>{
+return ele.style.color='red'
+})
+*/
+
+//replce element with another
+
+const parentDiv=document.querySelector(#parentDiv)
+console.log(parentDiv)
+const innerDiv=parentDiv.firstElementChild
+console.log(innerDiv)
+
+day8:
+
+
+WHat is Event?
+An HTML event can be somethings the browser does, or someting the user does
+JAvaScripte let you execute the code on event fired.
+------------------------------------------------------------------------------------------------------
+
+
+
+
+4 Ways of writing events in javascript?
+
+1:using inline events(alerts)
+2 : By calling a function (common way )
+3: By using Element reference (HTML onclick="" or element.onclick())
+4: By Using event Listener (addEventListener)
+
+------------------------------------------------------------------------------------------------------
+2) way
+function callFunction() {
+    console.log(event);
+    
+  alert('Hey dude you Called Me !')
+}
+
+var callFunction =()=>{
+  alert('Hey you Called Me !')
+}
+------------------------------------------------------------------------------------------------------
+3) way
+ var eleRef=document.getElementById('eleReference');
+eleRef.onclick=function(){
+    alert("I am caling by element reference")
+} 
+
+var heading=document.getElementById('title');
+heading.onmouseenter=()=>{
+    confirm("are you sure!")
+}
+
+ eleRef.onclick=()=>{
+    alert("I am fired by using element reference and arrow function");
+
+}
+
+------------------------------------------------------------------------------------------------------
+
+4)way
+ var eleRef=document.getElementById('eleReference');
+
+eleRef.addEventListener('mouseenter',function(){
+    document.body.style.backgroundColor="pink";
+});
+eleRef.addEventListener('mouseenter',function(){
+    alert('Hey i am fird by using add event listnerr')
+})
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+What is event Object?
+Event Object is parent of all events(event info present in parent Event Object)
+
+  var eleRef=document.getElementById('eleReference');
+
+eleRef.addEventListener('click',()=>{
+  console.log(event);
+  console.log(event.target);
+  console.log(event.type);
+  
+  
+})
+------------------------------------------------------------------------------------------------------
+
+Mouse Evenets
+
+function callMouseDownFunction(){
+document.getElementById('mouse1').style.backgroundColor='red';
+}
+
+ function callMouseUpFunction(){
+  document.getElementById('mouse1').style.backgroundColor='green';
+
+}
+
+
+function callMouseEnterFunction(){
+document.getElementById('mouse2').style.backgroundColor='violet';
+}
+
+ function callMouseLeaveFunction(){
+  document.getElementById('mouse2').style.backgroundColor='yellow';
+
+}
+
+------------------------------------------------------------------------------------------------------
+
+Key Events
+function keyDown(){
+  console.log('Hey dude you down the key')
+  
+}
+
+function keyUp(){
+  console.log ('Hey dude you up the key')
+
+  console.log(event);
+  
+console.log(event.key);
+   console.log(event.target.value);
+  
+  }
+
+------------------------------------------------------------------------------------------------------
+
+// onChange event
+
+function onChangevalue() {
+  console.log(event.target.value);
+
+  
+}
+------------------------------------------------------------------------------------------------------
+
+What is Event Propogation?
+this mode determines in which order the element receive the event
+Event bubbling and capturing are the two phases for event propogation
+when an event occure in an element inside another element and both element have registerd a handle for that event
+
+Event Capturing/trickling -event propogate from window/parent to bottom target element
+Event Bubbling- event propogate from innermost target elemebnt to parent/outermost element
+
+by Default Bubbling at false value
+const outerDiv=document.querySelector('#outerDiv');
+outerDiv.addEventListener('click',()=>{
+  alert("Hey I am Outer Parent")
+},true)
+
+const innerDiv=document.querySelector('#innerDiv');
+innerDiv.addEventListener('click',()=>{
+  alert("Hey I am Inner Element")
+},true)
+
+
+
+

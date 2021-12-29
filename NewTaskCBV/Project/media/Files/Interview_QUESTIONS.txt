@@ -1,0 +1,97 @@
+What is package and module in Python with example?
+-->Module: The module is a simple Python file that contains collections of functions and global variables and with having a . py extension file. It is an executable file and to organize all the modules we have the concept called Package in Python. Example: Save the code in file called demo_module.py
+
+Differences Between Python Modules and Packages
+-->So, now that we’ve revised both modules and packages, let’s see how they differ:
+
+A module is a file containing Python code. A package, however, is like a directory that holds sub-packages and modules.
+A package must hold the file __init__.py. This does not apply to modules.
+To import everything from a module, we use the wildcard *. But this does not work with packages.
+
+What are global protected and private attributes in Python?
+-->There are three types of access modifiers in Python: public, private, and protected. Variables with the public access modifiers can be accessed anywhere inside or outside the class, the private variables can only be accessed inside the class, while protected variables can be accessed within the same package.To create a private variable, you need to prefix double underscores with the name of the variable. To create a protected variable, you need to prefix a single underscore with the variable name. For public variables, you do not have to add any prefixes at all.
+
+What is Docstring in Python explain?
+-->A Python docstring is a string used to document a Python module, class, function or method, so programmers can understand what it does without having to read the details of the implementation. Also, it is a common practice to generate online (html) documentation automatically from docstrings.
+
+How is memory managed in Python explain?
+Memory management in Python involves a private heap containing all Python objects and data structures. ... At the lowest level, a raw memory allocator ensures that there is enough room in the private heap for storing all Python-related data by interacting with the memory manager of the operating system.
+
+
+What is pickling and unpickling in python?
+-->Pickling and unpickling are very important when we have to transfer Python objects from one machine to another and vice versa.
+Pickling
+In Python, pickling is the process by which Python objects are converted to byte streams. Pickling is about serializing the object structure in python.
+Unpickling.Dump method is used
+Unpickling is the process of retrieving original python objects from the stored string representation i.e from the pickle file. It is the process of converting a byte stream into the python object.load() method is used
+
+
+Q. What is PYTHON PATH variable? What is its significance?
+Answer =
+PYTHONPATH is the variable that tells the interpreter where to locate the module files imported into a program. Hence, it must include the Python source library directory and the directories containing Python source code. You can manually set PYTHONPATH, but usually, the Python installer will preset it.
+
+ 
+What is the usage of help () function in python?
+The Python help function is used to display the documentation of modules, functions, classes, keywords, etc.
+What is the use of dir () function in python?
+Python dir() Function
+The dir() function returns all properties and methods of the specified object, without the values. This function will return all the properties and methods, even built-in properties which are default for all object.
+
+diff betn .py and .pyc
+py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program. We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run. It is only created for the files that you import.
+Before executing a python program python interpreter checks for the compiled files. If the file is present, the virtual machine executes it. If not found, it checks for .py file. If found, compiles it to .pyc file and then python virtual machine executes it.
+Having .pyc file saves you the compilation time.
+
+why python is dynamically typed language
+-->We don't have to declare the type of variable while assigning a value to a variable in Python. Other languages like C, C++, Java, etc.., there is a strict declaration of variables before assigning values to them. ... It states the kind of variable in the runtime of the program. So, Python is a dynamically typed language.
+
+why python is interpreted language?
+-->Python is an interpreted language, which means the source code of a Python program is converted into bytecode that is then executed by the Python virtual machine. Python is different from major compiled languages, such as C and C + +, as Python code is not required to be built and linked like code for these languages.
+
+break continur and pass
+-->A break statement, when used inside the loop, will terminate the loop and exit. If used inside nested loops, it will break out from the current loop.
+         A continue statement, when used inside a loop, will stop the current execution, and the control will go back to the start of the loop.
+         The main difference between break and continue statement is that when break keyword is encountered, it will exit the loop.
+          Python pass is a null statement. When the execution starts and the interpreter comes across the pass statement, it does nothing and is ignored.
+
+what is name space in python
+-->A namespace is a system that has a unique name for each and every object in Python. An object might be a variable or a method. Python itself maintains a namespace in the form of a Python dictionary.Types Global,Local and Built-in namespace.
+
+diff betn DEEpCOPY AND SHallow Copy
+-->Deep copy stores copies of the object's value. Shallow Copy reflects changes made to the new/copied object in the original object. Deep copy doesn't reflect changes made to the new/copied object in the original object. Shallow Copy stores the copy of the original object and points the references to the objects.
+
+Difference between Shallow copy and Deep copy
+S.No.
+
+Shallow Copy
+
+Deep Copy
+
+1.
+
+In Shallow copy, a copy of the original object is stored and only the reference address is finally copied.
+
+In Deep copy, the copy of the original object and the repetitive copies both are stored.
+
+2.
+
+Shallow copy is faster than Deep copy.
+
+Deep copy is slower than Shallow copy.
+
+3.
+
+The changes made in the copied object also reflect the original object.
+
+There is no reflection on the original object when the changes are made in the copied object.
+
+4.
+
+It stores references of the object in the main memory.
+
+It stores copies of the object values.
+
+Slicing in python
+-->list slicing is a common practice in Python and can be used both with positive indexes as well as negative indexes
+
+
